@@ -2,12 +2,15 @@ package model;
 import java.time.LocalDate;
 
 public class Tarefa {
+    int id;
     String nome;
     String descricao;
     LocalDate DataTermino;
     int prioridade;
     String categoria;
     int status;
+
+    static final String[] STATUSES = { "ToDo", "Doing", "Done" };
 
     public Tarefa(){
     }
@@ -19,6 +22,10 @@ public class Tarefa {
         this.prioridade = prioridade;
         this.categoria = categoria;
         this.status = status;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getNome() {
@@ -49,6 +56,10 @@ public class Tarefa {
         this.nome = nome;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
@@ -67,5 +78,9 @@ public class Tarefa {
 
     public void setStatus(int status) {
         this.status = status;
+    }
+
+    public static String[] Statuses(){
+        return STATUSES;
     }
 }

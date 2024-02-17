@@ -1,15 +1,18 @@
 package db;
-import model.*;
+import model.Tarefa;
 import java.util.ArrayList;
 
 public class Base {
     private static ArrayList<Tarefa> tarefas = new ArrayList<>();
+    private static int idTarefa = 1;
 
-    public static ArrayList<Tarefa> tarefasLista() {
+    public static ArrayList<Tarefa> listaTarefas() {
         return tarefas;
     }
 
     public static void criarTarefa(Tarefa tarefa) {
+        tarefa.setId(idTarefa);
+        idTarefa += 1;
         tarefas.add(tarefa);
     }
 

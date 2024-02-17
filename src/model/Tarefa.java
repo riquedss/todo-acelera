@@ -1,21 +1,25 @@
 package model;
-import java.time.LocalDate;
+
+import db.Base;
+
+import java.util.ArrayList;
 
 public class Tarefa {
     int id;
     String nome;
     String descricao;
-    LocalDate DataTermino;
+    String DataTermino;
     int prioridade;
     String categoria;
     int status;
 
-    static final String[] STATUSES = { "ToDo", "Doing", "Done" };
+    private static final String[] STATUSES = { "ToDo", "Doing", "Done" };
+    private static final int[] PRIORIDADES = { 1, 2, 3, 4, 5 };
 
     public Tarefa(){
     }
 
-    public Tarefa(String nome, String descricao, LocalDate DataTermino, int prioridade, String categoria, int status) {
+    public Tarefa(String nome, String descricao, String DataTermino, int prioridade, String categoria, int status) {
         this.nome = nome;
         this.descricao = descricao;
         this.DataTermino = DataTermino;
@@ -36,7 +40,7 @@ public class Tarefa {
         return descricao;
     }
 
-    public LocalDate getDataTermino() {
+    public String getDataTermino() {
         return DataTermino;
     }
 
@@ -64,7 +68,7 @@ public class Tarefa {
         this.descricao = descricao;
     }
 
-    public void setDataTermino(LocalDate dataTermino) {
+    public void setDataTermino(String dataTermino) {
         DataTermino = dataTermino;
     }
 
@@ -82,5 +86,24 @@ public class Tarefa {
 
     public static String[] Statuses(){
         return STATUSES;
+    }
+
+    public static ArrayList<String> categorias(){
+        ArrayList<String> categorias = new ArrayList<>();
+        for (Tarefa tarefa : Base.listaTarefas()){
+            if (!categorias.contains(tarefa.categoria)){
+                categorias.add(tarefa.categoria);
+            }
+        }
+
+        return categorias;
+    }
+
+    public static int[] prioridades(){
+        return PRIORIDADES;
+    }
+
+    public void salvar(){
+        Base.criarTarefa(this);
     }
 }

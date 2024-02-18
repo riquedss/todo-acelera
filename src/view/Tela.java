@@ -107,12 +107,16 @@ public class Tela {
             System.out.println("|                TAREFA POR STATUS                  |");
             System.out.println("|___________________________________________________|");
 
+            int i = 0;
             for (String status : Tarefa.Statuses()){
                 System.out.println("|STATUS: " + status);
                 System.out.println("|___________________________________________________|");
                 for (Tarefa tarefa : Base.listaTarefas()){
-                    mostrarTarefa(tarefa);
+                    if (tarefa.getStatus() == i){
+                        mostrarTarefa(tarefa);
+                    }
                 }
+                i++;
             }
         } while (confirmarContinuacaoTela());
 

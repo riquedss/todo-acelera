@@ -86,7 +86,7 @@ public class Tela {
     public static void listarTarefasPrioridade(){
         do {
             System.out.println(" ___________________________________________________ ");
-            System.out.println("|              TAREFA POR CATEGORIA                 |");
+            System.out.println("|              TAREFA POR PRIORIDADE                |");
             System.out.println("|___________________________________________________|");
 
             for (int prioridade : Tarefa.prioridades()){

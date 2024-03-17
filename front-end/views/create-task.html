@@ -9,7 +9,7 @@
 <body>
     <section class="main-container">
         <div class="todo-box" >
-            <h1 class="todo">Create To do List</h1>
+            <h1 class="todo">Criar Tarefa</h1>
             <div class="todo-box-form">
                 <form class="form-todo" action="">
                     <label for="nome">Nome</label>
@@ -24,6 +24,7 @@
                     
                     <label for="prioridade">Prioridade:</label>
                     <select id="prioridade" name="prioridade">
+                      <option></option>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -33,17 +34,19 @@
     
                     <label for="status">Status:</label>
                     <select id="status" name="status">
+                      <option></option>
                       <option value="0">ToDo</option>
                       <option value="1">Doing</option>
                       <option value="2">Done</option>
                     </select>
                     <div class="botoes">
-                        <input type="button" value="Salvar">
-                        <input type="button" value="cancelar">
+                        <input id="btn-salvar" type="button" value="Salvar">
+                        <input id="btn-cancelar" type="button" value="cancelar">
                     </div>
                 </form>
             </div>
         </div>
     </section>
+    <script src="../src/js/todo-index.js"></script>
 </body>
 </html>

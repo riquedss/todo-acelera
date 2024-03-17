@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/css/todo-index.css">
+    <title>To do List</title>
+</head>
+<body>
+    <section class="main-container">
+        <div class="todo-box" >
+            <h1 class="todo">Create To do List</h1>
+            <div class="todo-box-form">
+                <form class="form-todo" action="">
+                    <label for="nome">Nome</label>
+                    <input type="text" name="nome">
+    
+                    <label for="descricao">Descrição:</label>
+                    <textarea name="descricao">
+                    </textarea>
+                        
+                    <label for="prazo">Prazo:</label>
+                    <input type="date" name="prazo">
+                    
+                    <label for="prioridade">Prioridade:</label>
+                    <select id="prioridade" name="prioridade">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select>
+    
+                    <label for="status">Status:</label>
+                    <select id="status" name="status">
+                      <option value="0">ToDo</option>
+                      <option value="1">Doing</option>
+                      <option value="2">Done</option>
+                    </select>
+                    <div class="botoes">
+                        <input type="button" value="Salvar">
+                        <input type="button" value="cancelar">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
